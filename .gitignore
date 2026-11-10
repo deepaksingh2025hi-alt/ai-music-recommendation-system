@@ -1,0 +1,29 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Build files
+dist/
+backend/dist/
+frontend/dist/
+
+# Local databases and user data
+data/
+backend/data/
+
+# Logs and cache
+*.log
+__pycache__/
+*.pyc
+venv/
+.venv/
+.DS_Store
+*.tsbuildinfo

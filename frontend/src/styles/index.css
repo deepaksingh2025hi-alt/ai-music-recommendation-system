@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-slate-100 font-sans selection:bg-white/30 selection:text-white;
+    background-color: #1a1920;
+    overflow: hidden;
+  }
+}
+
+/* Reference UI Background: Realistic blurred bright architectural room */
+.reference-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.12), transparent 60%),
+    linear-gradient(135deg, rgba(30, 28, 36, 0.7) 0%, rgba(15, 14, 20, 0.85) 100%),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px);
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+/* Reference UI Main Floating Glass Window (Smoky graphite, not purple) */
+.glass-window {
+  background: rgba(36, 34, 44, 0.52);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 40px 120px -20px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+/* Reference UI Left Capsule Dock */
+.glass-dock {
+  background: rgba(38, 36, 46, 0.6);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Sub-card inside the main glass window */
+.glass-subcard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease-out;
+}
+
+.glass-subcard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Browser Header Mock Bar */
+.browser-bar {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ai-music-platform",
+  "version": "1.0.0",
+  "description": "AuraPulse AI - Next-Gen AI-Powered Music Recommendation and Streaming Platform",
+  "scripts": {
+    "start": "concurrently -n \"BACKEND,FRONTEND\" -c \"magenta,cyan\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"magenta,cyan\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build:backend": "npm run build --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:db": "\"C:\\Program Files\\MongoDB\\Server\\8.3\\bin\\mongod.exe\" --dbpath ./data/mongo"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
